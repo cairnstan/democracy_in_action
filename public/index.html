@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="poliApp">
+  <head>
+    <meta charset="utf-8">
+    <title>DEMOCRACY IN ACTION</title>
+    <script src="angular.min.js"></script>
+    <link rel="stylesheet" href="spreadsheet.css" />
+    <script src="app.js"></script>
+  </head>
+  <body ng-controller="MainController">
+    <button ng-click="candidates()">WHO ARE THE CANDIDATES?</button>
+    <br />
+    Progessive Candidates:
+    <ul>
+      <li ng-repeat="candidate in progressive" ng-show="candidates">
+        {{candidate}}
+      </li>
+    </ul>
+    Conservative Candidates:
+    <ul>
+      <li ng-repeat="politician in conservative" ng-show="candidates">
+        {{politician}}
+      </li>
+    </ul>
+    <button ng-click="winner()">SHOW ME THE WINNER!</button>
+    <div ng-show="winner">
+      THE NEXT PRESIDENT OF THE UNITED STATES IS:
+      {{winner}}
+    </div>
+  </body>
+</html>
